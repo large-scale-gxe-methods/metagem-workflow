@@ -1,6 +1,6 @@
 workflow metagem_wf {
 
-	String? inputfile
+	String? inputfiles
 	String? inputfile_list
 	String exposure_names
 	Int? meta_option = 0
@@ -11,7 +11,7 @@ workflow metagem_wf {
 
 	call run_metagem {
 		input:
-			inputfile = inputfile,
+			inputfiles = inputfiles,
 			inputfile_list = inputfile_list,
 			exposure_names = exposure_names,
 			meta_option = meta_option,

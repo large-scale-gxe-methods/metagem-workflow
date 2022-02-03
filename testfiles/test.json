@@ -1,0 +1,4 @@
+{
+  "metagem_wf.inputfiles": "testfiles/my_example.out testfiles/my_example2.out testfiles my_example3.out",
+  "metagem_wf.exposure_names": "cov1 cov2 cov3",
+}
