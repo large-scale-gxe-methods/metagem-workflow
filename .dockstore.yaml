@@ -1,7 +1,0 @@
-version: 1.2
-workflows:
-    - name: metagem-workflow
-      subclass: WDL
-      primaryDescriptorPath: /metagem_workflow.wdl
-      testParameterFiles: 
-        - testfiles/test.json

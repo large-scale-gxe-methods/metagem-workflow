@@ -33,10 +33,10 @@ task run_metagem {
 	String? inputfile_list
 	String exposure_names
 	Int? meta_option
-	Int memory = 5
-	Int cpu = 1
-	Int disk = 10
-	Int preemptible = 0
+	Int memory
+	Int cpu
+	Int disk
+	Int preemptible
 
 	command {
 		dstat -c -d -m --nocolor > system_resource_usage.log &
