@@ -1,9 +1,8 @@
 workflow metagem_wf {
 
-	String? inputfiles
-	String? inputfile_list
+	Array[File] inputfiles
 	String exposure_names
-	Int? meta_option = 0
+	Int meta_option
 	Int? memory = 5
 	Int? cpu = 1
 	Int? disk = 10
@@ -12,7 +11,6 @@ workflow metagem_wf {
 	call run_metagem {
 		input:
 			inputfiles = inputfiles,
-			inputfile_list = inputfile_list,
 			exposure_names = exposure_names,
 			meta_option = meta_option,
 			memory = memory,
@@ -29,10 +27,9 @@ workflow metagem_wf {
 
 task run_metagem {
 
-	String? inputfiles
-	String? inputfile_list
+	Array[File] inputfiles
 	String exposure_names
-	Int? meta_option
+	Int meta_option
 	Int? memory
 	Int? cpu
 	Int? disk
@@ -43,10 +40,9 @@ task run_metagem {
 		atop -x -P PRM | grep '(METAGEM)' > process_resource_usage.log &
 
 		/METAGEM/METAGEM \
-			${"--input-files " + inputfiles} \
-			${"--input-file-list " + inputfile_list} \
+			--input-files ${sep=" " inputfiles} \
 			--exposure-names ${exposure_names} \
-			--meta-option meta_option \
+			--meta-option ${meta_option} \
 			--out metagem_res
 	}
 
