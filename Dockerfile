@@ -36,7 +36,6 @@ ADD https://api.github.com/repos/large-scale-gxe-methods/METAGEM/git/refs/heads 
 RUN apt-get update && apt-get -y install git make libzstd-dev && \
   git clone https://github.com/large-scale-gxe-methods/METAGEM && \
   cd /METAGEM && \
-  git checkout dev && \
   cd src && \
   env && \
   pwd && \
