@@ -23,6 +23,15 @@ workflow metagem_wf {
 		File output_sumstats = run_metagem.out
 	}
 
+	parameter_meta {
+		inputfiles: "Tabular output files containing summary statistics from GEM runs (must have been run using --output-style 'meta' or 'full')."
+		exposure_names: "Name(s) of the exposures whose interaction should be meta-analyzed (space-delimited)."
+		meta_option: "Integer indicating the type of standard errors to be used (0: both model-based and robust; 1: model-based only; 2: robust only)."
+		memory: "Requested memory (in GB)."
+		cpu: "Minimum number of requested cores."
+		disk: "Requested disk space (in GB)."
+		preemptible: "Optional number of attempts using a preemptible machine from Google Cloud prior to falling back to a standard machine (default = 0, i.e., don't use preemptible)."
+	}
 }
 
 task run_metagem {
