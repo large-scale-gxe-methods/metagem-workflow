@@ -4,4 +4,4 @@ workflows:
     subclass: WDL
     primaryDescriptorPath: /metagem_workflow.wdl
     testParameterFiles: 
-      - testfiles/test.json
+      - /testfiles/test.json
